@@ -1,10 +1,12 @@
 <div class="list-task-container">
     <div class="list-task">
         <div class="list-task-name">
-            taskListName
+            Task List
             <i class="fa fa-plus"></i>
         </div>
-        <app-task></app-task>
+        <div *ngFor="let task of tasks">
+            <app-task [task]="task"></app-task>
+        </div>
         <div class="footer">
             <button class="btn-sc btn-sc-primary btn-sc-sm">
                 <i class="fa fa-plus icon-left"></i>
