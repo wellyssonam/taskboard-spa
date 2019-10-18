@@ -1,0 +1,54 @@
+@import '../../../../variables';
+
+$widthDropdown: 100px !important;
+
+.task {
+    font-size: 1em;
+    background: #FFF;
+    border-radius: $borderRadiusTask;
+    padding: 10px;
+    margin-top: 10px;
+    position: relative;
+    transition: 700ms;
+    .fa-ellipsis-v {
+        display: none;
+    }
+    &:hover {
+        background: #5e616863;
+        .fa-ellipsis-v {
+            cursor: pointer;
+            display: block;
+            font-size: 1.3em;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            padding: 8px 15px;
+            border-radius: $borderRadiusTask;
+            color: #f3f3f3;
+            background: #5e61689e;
+            opacity: 1;
+        }
+    }
+    .dropdown-content {
+        width: $widthDropdown;
+        height: auto !important;
+        top: 5px !important;
+        left: calc(100% - 105px) !important;
+        li {
+            min-height: auto;
+            a {
+                line-height: normal;
+                padding: 10px;
+                background: #5e6168;
+                color: #FFF;
+                &:hover {
+                    opacity: 0.85;
+                }
+            }
+        }
+    }
+    .task-footer {
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
+}

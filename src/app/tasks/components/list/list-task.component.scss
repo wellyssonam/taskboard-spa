@@ -1,0 +1,26 @@
+@import '../../../../variables';
+
+.list-task-container {
+    .list-task {
+        background: #EBECF0;
+        width: auto;
+        max-width: 250px;
+        border-radius: $borderRadiusTask;
+        padding: 10px;
+        .list-task-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #606060;
+            padding-right: 20px;
+            position: relative;
+            .fa {
+                position: absolute;
+                right: 0;
+                top: 5px;
+            }
+        }
+        .footer {
+            margin-top: 10px;
+        }
+    }
+}
