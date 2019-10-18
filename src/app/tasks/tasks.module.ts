@@ -5,11 +5,13 @@ import { RouterModule, Router } from '@angular/router';
 import { ListTaskComponent } from './components/list';
 import { TaskComponent } from './components/task';
 import { TaskService } from './services';
+import { RegisterTaskComponent } from './components/register';
 
 @NgModule({
   declarations: [
     ListTaskComponent,
-    TaskComponent
+    TaskComponent,
+    RegisterTaskComponent
   ],
   imports: [
     CommonModule,

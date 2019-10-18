@@ -1,0 +1,15 @@
+@import '../../../../variables';
+
+$fontColorHeader: $colorNav + bf;
+
+.register-task-container {
+    .header {
+        color: $fontColorHeader;
+        font-weight: 700;
+        font-size: 1.7em;
+        letter-spacing: 3px;
+        margin: 0px 0px;
+        padding: 7px 0px 7px 10px;
+        border-left: 10px solid $colorNav;
+    }
+}

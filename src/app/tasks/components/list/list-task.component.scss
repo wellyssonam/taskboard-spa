@@ -13,6 +13,9 @@
             color: #606060;
             padding-right: 20px;
             position: relative;
+            .add-task {
+                cursor: pointer;
+            }
             .fa {
                 position: absolute;
                 right: 0;

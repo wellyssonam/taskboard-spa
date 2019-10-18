@@ -2,13 +2,16 @@
     <div class="list-task">
         <div class="list-task-name">
             Task List
-            <i class="fa fa-plus"></i>
+            <i class="fa fa-plus add-task" [routerLink]="['/tasks/register']"></i>
         </div>
         <div *ngFor="let task of tasks">
             <app-task [task]="task"></app-task>
         </div>
         <div class="footer">
-            <button class="btn-sc btn-sc-primary btn-sc-sm">
+            <button
+                class="btn-sc btn-sc-primary btn-sc-sm"
+                [routerLink]="['/tasks/register']"
+            >
                 <i class="fa fa-plus icon-left"></i>
                 <span>Add Task</span>
             </button>
