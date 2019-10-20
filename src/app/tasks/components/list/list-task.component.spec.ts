@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ListTaskComponent } from './list-task.component';
 import { TaskComponent } from '../task';
-import { TaskService } from '../../services';
+import { TaskService } from './../../services';
 import { Task } from '../../../shared';
 
 describe('ListTaskComponent', () => {
@@ -12,12 +13,14 @@ describe('ListTaskComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [
         ListTaskComponent,
         TaskComponent
-      ]
+      ],
+      providers: [TaskService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -27,8 +30,8 @@ describe('ListTaskComponent', () => {
   });
 
   tasks = [
-    new Task(1, 'test #1', new Date(), new Date(2019, 2, 1), 100, 'completed'),
-    new Task(2, 'test #2', new Date(), new Date(2019, 2, 2), 100, 'completed')
+    new Task(1, 'test #1', null, null, 100, 'completed'),
+    new Task(2, 'test #2', null, null, 100, 'completed')
   ];
 
   it('should create', () => {
@@ -38,17 +41,23 @@ describe('ListTaskComponent', () => {
   // empty task list
   it('no tasks registered', () => {
     // empty tasks
-    expect(component.tasks.length).toEqual(0);
+    localStorage.clear();
     expect(component.listAll().length).toEqual(0);
-  })
-  
+  });
+
   // list all tasks
-  // TODO: Fazer após ser possível cadastrar pelo service
   it('Test list all tasks', () => {
+    const service: TaskService = TestBed.get(TaskService);
+    localStorage.clear();
+
+    component.tasks = component.listAll();
+    expect(component.tasks.length).toEqual(0);
+
     // adding tasks to the list
-    // component.tasks = tasks;
-    // console.log(component.listAll())
-    // expect(component.tasks.length).toEqual(2);
-    // expect(component.listAll().length).toEqual(2);
-  })
+    service.register(tasks[0]);
+    service.register(tasks[1]);
+    component.tasks = component.listAll();
+    expect(component.tasks.length).toEqual(2);
+    expect(component.tasks[0].name).toEqual('test #1');
+  });
 });

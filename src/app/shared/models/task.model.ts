@@ -3,9 +3,9 @@ export class Task {
     constructor(
         public id?: number,
         public name?: string,
-        public date?: Date,
-        public deliveryDate?: Date,
+        public date?: string,
+        public deliveryDate?: string,
         public progressBar?: number,
         public status?: string
-    ){}
+    ) {}
 }

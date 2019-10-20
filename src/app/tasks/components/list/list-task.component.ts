@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as M from 'materialize-css';
-import * as $ from 'jquery';
 import { Task } from '../../../shared';
 import { TaskService } from '../../services';
 
@@ -22,17 +20,10 @@ export class ListTaskComponent implements OnInit {
     //   new Task(1, 'test #1', new Date(), new Date(), 100, 'completed'),
     //   new Task(2, 'test #2', new Date(), new Date(), 100, 'completed')
     // ];
-    this.tasks = this.listAll();
-
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, {
-      coverTrigger: false
-    });
+    this.tasks = this.listAll();  
   }
 
-  /**
-   * return Lista all tasks
-   */
+  /** return Lista all tasks */
   listAll(): Task[] {
     return this.taskService.listAll();
   }

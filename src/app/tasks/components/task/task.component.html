@@ -1,10 +1,10 @@
 <div class="task" *ngIf="task">
-    <a class="dropdown-trigger" data-target="dropdown-task-options">
+    <a class="dropdown-trigger" [attr.data-target]="dataTargetTask">
         <i class="fa fa-ellipsis-v"></i>
     </a>
     <!-- task options in dropdown -->
-    <ul id="dropdown-task-options" class='dropdown-content'>
-        <li><a class="dropdown-link" href="#">Edit</a></li>
+    <ul [attr.id]="dataTargetTask" class='dropdown-content'>
+        <li><a class="dropdown-link" [routerLink]="['/tasks/edit', task.id]">Edit</a></li>
         <li><a class="dropdown-link" href="#">Delete</a></li>
     </ul>
 

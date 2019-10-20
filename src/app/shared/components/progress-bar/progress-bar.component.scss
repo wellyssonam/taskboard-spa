@@ -1,0 +1,43 @@
+@import '../../../../variables';
+
+$progressBarRadius: 11px;
+
+.progress-bar {
+    label {
+        color: $mainColor;
+    }
+    .progress-number-content {
+        display: flex;
+        input {
+            border-bottom-color: $mainColor;
+            &:focus {
+                border-bottom-color: $mainColor;
+                box-shadow: 0 1px 0 0 $mainColor;
+            }
+        }
+        .progress-number {
+            width: 75px;
+        }
+        .percent {
+            margin: auto 5px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+    .progress-bar-container {
+        margin-top: 10px;
+        padding: 2px;
+        border: 1px solid $mainColor;
+        border-radius: $progressBarRadius;
+        background: #efefef;
+        .progress-size {
+            background: $mainColor;
+            color: #FFF;
+            height: 15px;
+            border-radius: $progressBarRadius;
+            padding: 0px 0px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+    }
+}

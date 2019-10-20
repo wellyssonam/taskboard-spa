@@ -1,3 +1,75 @@
 <div class="register-task-container">
     <h4 class="header">Register Task</h4>
+    <div class="row">
+        <form class="form col s12" #formTask="ngForm">
+            <div class="row">
+                <div class=" col s12 m8 l7">
+                    <label for="task_name" class="active">Task Name</label>
+                    <input
+                        id="task_name"
+                        name="name"
+                        type="text"
+                        class="validate"
+                        minlength="5" 
+                        required
+                        [(ngModel)]="task.name"
+                        #name="ngModel"
+                    >
+                    <div
+                        class="alert alert-danger"
+                        *ngIf="name.errors && (name.dirty || name.touched)"
+                    >
+                        <div [hidden]="!name.errors.required">
+                            Enter the task.
+                        </div>
+                        <div [hidden]="!name.errors.minlength">
+                            Task must contain at least 5 characters.
+                        </div>
+                    </div>
+                </div>
+                <div class=" col s6 m5 right-m7 l3 right-l9">
+                    <label for="date" class="active">Date</label>
+                    <input
+                        id="date"
+                        type="text"
+                        class="datepicker"
+                        name="date"
+                        disabled
+                        [(ngModel)]="task.date"
+                    >
+                </div>
+                <div class=" col s6 m5 right-m7 l3 right-l9">
+                    <label for="deliveryDate" class="active">Delivery Date</label>
+                    <input
+                        id="deliveryDate"
+                        type="text"
+                        class="datepicker"
+                        name="deliveryDate"
+                        (change)=changeFormatDate($event)
+                        [(ngModel)]="task.deliveryDate"
+                        #deliveryDate="ngModel"
+                    >
+                </div>
+                <div class=" col s6 m5 right-m7 l3 right-l9">
+                    <app-progress-bar></app-progress-bar>
+                </div>
+                <div class="footer col s12">
+                    <button
+                        class="btn-sc btn-sc-secondary"
+                        [routerLink]="['/tasks']"
+                        >
+                        <i class="fa fa-chevron-circle-left"></i>
+                        Back
+                    </button>
+                    <input 
+                        type="submit"
+                        class="btn-sc btn-sc-success submit"
+                        value="Register"
+                        [disabled]="!formTask.form.valid"
+                        (click)="register()"
+                    >
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

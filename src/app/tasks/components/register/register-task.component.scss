@@ -1,6 +1,6 @@
 @import '../../../../variables';
 
-$fontColorHeader: $colorNav + bf;
+$fontColorHeader: $mainColor + bf;
 
 .register-task-container {
     .header {
@@ -10,6 +10,48 @@ $fontColorHeader: $colorNav + bf;
         letter-spacing: 3px;
         margin: 0px 0px;
         padding: 7px 0px 7px 10px;
-        border-left: 10px solid $colorNav;
+        border-left: 10px solid $mainColor;
+    }
+    .row {
+        .form {
+            background: #f8f8ff;
+            border-radius: $borderRadiusTask;
+            margin-top: 20px;
+            padding: 20px;
+            width: auto;
+            label {
+                color: $mainColor;
+            }
+            input:not([type="submit"]) {
+                border-bottom-color: $mainColor;
+                &:focus {
+                    border-bottom-color: $mainColor;
+                    box-shadow: 0 1px 0 0 $mainColor;
+                }
+                &:disabled {
+                    color: rgba(0,0,0,0.42);
+                    border-bottom: 1px solid $mainColor;
+                }
+            }
+            .footer {
+                margin-top: 40px;
+                .submit {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .row {
+        .col{
+            &.right-m7 {
+                margin-right: 58.3333333333%;
+            }
+            &.right-l9 {
+                margin-right: 75%;
+            }
+        }
     }
 }

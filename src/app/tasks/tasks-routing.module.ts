@@ -15,5 +15,9 @@ export const TaskRoutes: Routes = [
     {
         path: 'tasks/register',
         component: RegisterTaskComponent
+    },
+    {
+        path: 'tasks/edit/:id',
+        component: RegisterTaskComponent
     }
 ];

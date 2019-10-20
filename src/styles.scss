@@ -39,10 +39,88 @@ i {
             border-color: #0062cc;
         }
     }
+    &.btn-sc-secondary {
+        cursor: pointer;
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+        &:hover {
+            background-color: #5a6268;
+            border-color: #5a6268;
+        }
+    }
+    &.btn-sc-success {
+        cursor: pointer;
+        color: #fff;
+        background-color: #28a745;
+        border-color: #28a745;
+        &:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+        &:disabled {
+            background-color: #28a745;
+            border-color: #28a745;
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+    }
     &.btn-sc-sm {
         padding: 0.25rem 0.5rem;
         font-size: 0.875rem;
         line-height: 1.5;
         border-radius: 0.2rem;
+    }
+}
+
+.modal {
+    &.datepicker-modal {
+        .datepicker-container {
+            .datepicker-date-display {
+                background-color: $mainColor;
+            }
+            .datepicker-calendar-container {
+                .datepicker-calendar {
+                    .datepicker-table-wrapper {
+                        .datepicker-table {
+                            td {
+                                &:active {
+                                    .datepicker-day-button {
+                                        background-color: $mainColor;
+                                        color: #FFF;
+                                    }
+                                }
+                                &.is-selected {
+                                    background-color: $mainColor;
+                                    &:active {
+                                        .datepicker-day-button {
+                                            background-color: $mainColor;
+                                        }
+                                    }
+                                }
+                                &.is-today {
+                                    color: $mainColor;
+                                    .datepicker-day-button {
+                                        font-weight: bold;
+                                    }
+                                    &.is-selected {
+                                        color: #FFF;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .datepicker-footer {
+                    .confirmation-btns {
+                        .datepicker-cancel,
+                        .datepicker-done {
+                            color: $mainColor;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

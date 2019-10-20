@@ -3,12 +3,10 @@ import { By } from '@angular/platform-browser';
 
 import { TaskComponent } from './task.component';
 import { Task } from '../../../shared';
-import { DebugElement } from '@angular/core';
 
 describe('TaskComponent', () => {
   let component: TaskComponent;
   let fixture: ComponentFixture<TaskComponent>;
-  let nameEl: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -33,14 +31,14 @@ describe('TaskComponent', () => {
   it('should create existing task', () => {
     let task: Task;
     const compiled = fixture.debugElement.nativeElement;
-    
-    task = new Task(1, 'test #1', new Date(), new Date(2019, 2, 1), 100, 'completed');
-    component.task = task
+
+    task = new Task(1, 'test #1', null, new Date(2019, 2, 1).toLocaleDateString('pt-br'), 100, 'completed');
+    component.task = task;
     fixture.detectChanges();
 
     expect(component.task.id).toBe(1);
     expect(component.task.name).toBe('test #1');
-    expect(component.task.deliveryDate.toLocaleDateString()).toEqual('3/1/2019');
+    expect(component.task.deliveryDate).toEqual('01/03/2019');
     expect(component.task.progressBar).toBe(100);
     expect(component.task.status).toBe('completed');
 
