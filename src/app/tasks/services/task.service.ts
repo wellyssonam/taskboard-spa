@@ -49,4 +49,13 @@ export class TaskService {
     localStorage[this.keyTasks] = JSON.stringify(tasks);
   }
 
+  /**
+   * Delete Task
+   * @param id Id from the task
+   */
+  deleteTask(id: number): void {
+    const tasks = this.listAll();
+    localStorage[this.keyTasks] = JSON.stringify(tasks.filter(obj => obj.id !== id));
+  }
+
 }

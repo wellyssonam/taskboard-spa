@@ -24,4 +24,11 @@ export class ListTaskComponent implements OnInit {
     return this.taskService.listAll();
   }
 
+  /**
+   * Receive updated task list
+   * @param $event Event from delete task button involving other component
+   */
+  receiveTasksRef($event: any): void {
+    this.tasks = $event;
+  }
 }

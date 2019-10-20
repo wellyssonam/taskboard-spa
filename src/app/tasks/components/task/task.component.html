@@ -5,10 +5,16 @@
     <!-- task options in dropdown -->
     <ul [attr.id]="dataTargetTask" class='dropdown-content'>
         <li [routerLink]="['/tasks/edit', task.id]">
-            <a class="dropdown-link">Edit</a>
+            <a class="dropdown-link">
+                <i class="fa fa-edit"></i>
+                Edit
+            </a>
         </li>
-        <li>
-            <a class="dropdown-link" href="#">Delete</a>
+        <li (click)="deleteTask($event, task)">
+            <a class="dropdown-link">
+                <i class="fa fa-trash"></i>
+                Delete
+            </a>
         </li>
     </ul>
 

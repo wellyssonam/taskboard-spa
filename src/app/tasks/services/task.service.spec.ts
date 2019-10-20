@@ -70,4 +70,17 @@ describe('TaskService', () => {
     service.updateTask(taskList[0]);
     expect(service.searchTaskById(taskList[0].id).name).toEqual('test #0001');
   });
+
+  // Delete task
+  it('Delete task', () => {
+    const service: TaskService = TestBed.get(TaskService);
+    let taskList: Task[];
+    localStorage.clear();
+    service.register(tasks[0]);
+    taskList = service.listAll();
+    expect(taskList.length).toEqual(1);
+    // delete task
+    service.deleteTask(taskList[0].id);
+    expect(service.listAll().length).toEqual(0);
+  });
 });

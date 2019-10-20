@@ -9,6 +9,7 @@
             <app-task
                 [task]="task"
                 [keyTask]="keyTask"
+                (tasksRef)="receiveTasksRef($event)"
             >
             </app-task>
         </div>
