@@ -29,4 +29,24 @@ export class TaskService {
     localStorage[this.keyTasks] = JSON.stringify(tasks);
   }
 
+  /**
+   * Search task by id
+   */
+  searchTaskById(id: number): Task {
+    return this.listAll().find(task => task.id === id);
+  }
+
+  /**
+   * Update task
+   */
+  updateTask(task: Task): void {
+    const tasks = this.listAll();
+    tasks.forEach((obj, index, objs) => {
+      if (task.id === obj.id) {
+        objs[index] = task;
+      }
+    });
+    localStorage[this.keyTasks] = JSON.stringify(tasks);
+  }
+
 }

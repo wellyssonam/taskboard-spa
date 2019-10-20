@@ -1,7 +1,11 @@
 <div class="register-task-container">
-    <h4 class="header">Register Task</h4>
+    <h4 class="header">{{ titleHeader }}</h4>
     <div class="row">
-        <form class="form col s12" #formTask="ngForm">
+        <form
+            class="form col s12"
+            #formTask="ngForm"
+            (submit)="submitFormTask($event)"
+        >
             <div class="row">
                 <div class=" col s12 m8 l7">
                     <label for="task_name" class="active">Task Name</label>
@@ -51,7 +55,11 @@
                     >
                 </div>
                 <div class=" col s6 m5 right-m7 l3 right-l9">
-                    <app-progress-bar></app-progress-bar>
+                    <app-progress-bar
+                        (progressBarRef)="receiveProgressBarRef($event)"
+                        [progressBar]="task.progressBar"
+                    >
+                    </app-progress-bar>
                 </div>
                 <div class="footer col s12">
                     <button
@@ -66,7 +74,7 @@
                         class="btn-sc btn-sc-success submit"
                         value="Register"
                         [disabled]="!formTask.form.valid"
-                        (click)="register()"
+                        (click)="isEditing ? updateTask() : register()"
                     >
                 </div>
             </div>

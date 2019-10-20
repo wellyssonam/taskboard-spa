@@ -50,5 +50,26 @@ $widthDropdown: 100px !important;
     .task-footer {
         font-size: 0.9em;
         margin-top: 10px;
+        .progress-status {
+            margin-top: 10px;
+            .status {
+                font-weight: bold;
+                margin-left: 5px;
+                padding: 4px;
+                color: #FFF;
+                border-radius: 4px;
+                font-size: 10px;
+                vertical-align: top;
+                &.todo {
+                    background: #5a6268;
+                }
+                &.in-progress {
+                    background: #ffc107;
+                }
+                &.done {
+                    background: #28a745;
+                }
+            }
+        }
     }
 }

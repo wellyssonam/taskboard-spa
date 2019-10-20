@@ -2,6 +2,7 @@
     <div class="list-task">
         <div class="list-task-name">
             Task List
+            <span class="badge badge-dark">{{ tasks.length }}</span>
             <i class="fa fa-plus add-task" [routerLink]="['/tasks/register']"></i>
         </div>
         <div *ngFor="let task of tasks; let keyTask = index">

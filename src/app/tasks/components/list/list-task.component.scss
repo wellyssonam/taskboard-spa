@@ -13,6 +13,13 @@
             color: #606060;
             padding-right: 20px;
             position: relative;
+            .badge {
+                border-radius: 4px !important;
+                &.badge-dark {
+                    color: #FFF !important;
+                    background: #343a40 !important;
+                }
+            }
             .add-task {
                 cursor: pointer;
             }

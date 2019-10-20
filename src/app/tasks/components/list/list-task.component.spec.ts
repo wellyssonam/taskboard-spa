@@ -30,8 +30,8 @@ describe('ListTaskComponent', () => {
   });
 
   tasks = [
-    new Task(1, 'test #1', null, null, 100, 'completed'),
-    new Task(2, 'test #2', null, null, 100, 'completed')
+    new Task(1, 'test #1', null, null, 100),
+    new Task(2, 'test #2', null, null, 100)
   ];
 
   it('should create', () => {

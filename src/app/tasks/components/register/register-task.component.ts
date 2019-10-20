@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import M from 'materialize-css';
 import { Task } from '../../../shared';
 import { TaskService } from './../../services';
+import { ProgressBarComponent } from './../../../shared';
+
 
 @Component({
   selector: 'app-register-task',
@@ -14,19 +16,39 @@ import { TaskService } from './../../services';
 export class RegisterTaskComponent implements OnInit {
 
   @ViewChild('formTask', { static: true }) formTask: NgForm;
+  // @ViewChild(ProgressBarComponent, { static: true }) progressBarSize: ProgressBarComponent;
+
   task: Task;
+  isEditing: boolean;
+  titleHeader: string;
+  taskId: any;
+
+  // ngAfterViewInit() {
+  //   console.log(this.progressBarSize)
+  // }
 
   constructor(
     private taskService: TaskService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    const today = new Date().toLocaleDateString('pt-br');
-    this.task = new Task();
-    this.task.date = today;
-    this.task.deliveryDate = today;
+    const keyId = 'id';
+    this.taskId = +this.route.snapshot.params[keyId];
+    if (isNaN(this.taskId)) {
+      const today = new Date().toLocaleDateString('pt-br');
+      this.isEditing = false;
+      this.task = new Task();
+      this.task.date = today;
+      this.task.deliveryDate = today;
+      this.task.progressBar = 0;
+    } else {
+      this.isEditing = true;
+      this.task = this.taskService.searchTaskById(this.taskId);
+    }
 
+    this.titleHeader = this.isEditing ? 'Edit Task' : 'Register Task';
     const elems = document.querySelectorAll('.datepicker');
     const instances = M.Datepicker.init(elems, {});
   }
@@ -36,7 +58,6 @@ export class RegisterTaskComponent implements OnInit {
    * @param $event Information received from the deliveryDate field upon any event occurring on the same
    */
   changeFormatDate($event: any): void {
-    console.log('onchange')
     this.task.deliveryDate = new Date($event.target.value).toLocaleDateString('pt-br');
   }
 
@@ -46,6 +67,33 @@ export class RegisterTaskComponent implements OnInit {
       this.taskService.register(this.task);
       this.router.navigate(['/tasks']);
     }
+  }
+
+  /** Update task */
+  updateTask(): void {
+    if (this.formTask.form.valid) {
+      this.taskService.updateTask(this.task);
+      this.router.navigate(['/tasks']);
+    }
+  }
+
+  /**
+   * Submit Task Form
+   * @param $event Event from field
+   */
+  submitFormTask($event): void {
+    $event.preventDefault();
+    if (this.formTask.form.valid) {
+      this.isEditing ? this.updateTask() : this.register();
+    }
+  }
+
+  /**
+   * Receive event from progress bar
+   * @param $event Event from progress bar field involving other component
+   */
+  receiveProgressBarRef($event): void {
+    this.task.progressBar = $event;
   }
 
 }

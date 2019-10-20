@@ -6,6 +6,5 @@ export class Task {
         public date?: string,
         public deliveryDate?: string,
         public progressBar?: number,
-        public status?: string
     ) {}
 }

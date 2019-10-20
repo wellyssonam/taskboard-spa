@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { TaskComponent } from './task.component';
 import { Task } from '../../../shared';
@@ -12,6 +12,9 @@ describe('TaskComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         TaskComponent
+      ],
+      imports: [
+        RouterTestingModule
       ]
     })
     .compileComponents();
@@ -32,7 +35,7 @@ describe('TaskComponent', () => {
     let task: Task;
     const compiled = fixture.debugElement.nativeElement;
 
-    task = new Task(1, 'test #1', null, new Date(2019, 2, 1).toLocaleDateString('pt-br'), 100, 'completed');
+    task = new Task(1, 'test #1', null, new Date(2019, 2, 1).toLocaleDateString('pt-br'), 100);
     component.task = task;
     fixture.detectChanges();
 
@@ -40,9 +43,7 @@ describe('TaskComponent', () => {
     expect(component.task.name).toBe('test #1');
     expect(component.task.deliveryDate).toEqual('01/03/2019');
     expect(component.task.progressBar).toBe(100);
-    expect(component.task.status).toBe('completed');
 
     expect(compiled.querySelector('.name').textContent).toContain('test #1');
-    expect(compiled.querySelector('.status').textContent).toContain('completed');
   });
 });

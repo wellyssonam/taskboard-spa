@@ -1,12 +1,21 @@
 <div class="progress-bar">
     <label for="progress-bar-container" class="active">Progress Bar</label>
     <div class="progress-number-content">
-        <input class="progress-number" type="number" name="quantity" min="0" max="100" step="10" value="10">
+        <input
+            class="progress-number"
+            type="number"
+            name="progressBar"
+            min="0"
+            max="100"
+            step="10"
+            [attr.value]="progressBar"
+            (change)="sendProgressBarRef($event)"
+        >
         <div class="percent">
             <span>%</span>
         </div>
     </div>
     <div class="progress-bar-container">
-        <div class="progress-size" style="width:25%"></div>
+        <div class="progress-size" [ngStyle]="{width: progressBar + '%'}"></div>
     </div>
 </div>

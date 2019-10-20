@@ -4,13 +4,29 @@
     </a>
     <!-- task options in dropdown -->
     <ul [attr.id]="dataTargetTask" class='dropdown-content'>
-        <li><a class="dropdown-link" [routerLink]="['/tasks/edit', task.id]">Edit</a></li>
-        <li><a class="dropdown-link" href="#">Delete</a></li>
+        <li [routerLink]="['/tasks/edit', task.id]">
+            <a class="dropdown-link">Edit</a>
+        </li>
+        <li>
+            <a class="dropdown-link" href="#">Delete</a>
+        </li>
     </ul>
 
     <div id="task-name" class="name">{{ task.name }}</div>
     <div class="task-footer">
         <div class="date"><b>Delivery Date:</b> {{ task.deliveryDate }}</div>
-        <div class="status"><b>Status:</b> {{ task.status }}</div>
+        <div class="progress-status">
+            <b>Done:</b>
+            <span
+                class="status"
+                [ngClass]="{
+                    'todo': task.progressBar == 0,
+                    'in-progress': task.progressBar > 0,
+                    'done': task.progressBar == 100
+                }"
+            >
+                [{{ task.progressBar || 0 }}/100] %
+            </span>
+        </div>
     </div>
 </div>

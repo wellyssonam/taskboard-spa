@@ -55,7 +55,7 @@ describe('RegisterTaskComponent', () => {
     fixture.detectChanges();
     console.log(inputElement.value)
     expect(inputElement.value).toEqual('10/1/2019');
-    
+
 
     // const compiled = fixture.debugElement.nativeElement;
     // console.log(compiled.querySelector('.deliveryDate'))

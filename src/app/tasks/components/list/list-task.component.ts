@@ -16,11 +16,7 @@ export class ListTaskComponent implements OnInit {
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
-    // this.tasks = [
-    //   new Task(1, 'test #1', new Date(), new Date(), 100, 'completed'),
-    //   new Task(2, 'test #2', new Date(), new Date(), 100, 'completed')
-    // ];
-    this.tasks = this.listAll();  
+    this.tasks = this.listAll();
   }
 
   /** return Lista all tasks */
