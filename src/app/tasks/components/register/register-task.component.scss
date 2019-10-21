@@ -33,6 +33,14 @@ $fontColorHeader: $mainColor + bf;
                     border-bottom: 1px solid $mainColor;
                 }
             }
+            .alert-danger {
+                color: #721c24;
+                background-color: #f8d7da;
+                border-color: #f5c6cb;
+                padding: 3px 5px;
+                border-radius: 4px;
+                border: 1px solid #721c24;
+            }
             .footer {
                 margin-top: 40px;
                 .submit {
