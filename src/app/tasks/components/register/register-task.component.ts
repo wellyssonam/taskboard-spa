@@ -5,8 +5,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import M from 'materialize-css';
 import { Task } from '../../../shared';
 import { TaskService } from './../../services';
-import { ProgressBarComponent } from './../../../shared';
-
 
 @Component({
   selector: 'app-register-task',
@@ -16,16 +14,11 @@ import { ProgressBarComponent } from './../../../shared';
 export class RegisterTaskComponent implements OnInit {
 
   @ViewChild('formTask', { static: true }) formTask: NgForm;
-  // @ViewChild(ProgressBarComponent, { static: true }) progressBarSize: ProgressBarComponent;
 
   task: Task;
   isEditing: boolean;
   titleHeader: string;
   taskId: any;
-
-  // ngAfterViewInit() {
-  //   console.log(this.progressBarSize)
-  // }
 
   constructor(
     private taskService: TaskService,

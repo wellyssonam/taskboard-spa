@@ -2,6 +2,7 @@
     <a class="dropdown-trigger" [attr.data-target]="dataTargetTask">
         <i class="fa fa-ellipsis-v"></i>
     </a>
+    <!-- {{ checkTaskComponent() }} -->
     <!-- task options in dropdown -->
     <ul [attr.id]="dataTargetTask" class='dropdown-content'>
         <li [routerLink]="['/tasks/edit', task.id]">

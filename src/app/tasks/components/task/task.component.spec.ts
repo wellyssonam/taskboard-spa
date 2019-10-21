@@ -43,7 +43,5 @@ describe('TaskComponent', () => {
     expect(component.task.name).toBe('test #1');
     expect(component.task.deliveryDate).toEqual('01/03/2019');
     expect(component.task.progressBar).toBe(100);
-
-    expect(compiled.querySelector('.name').textContent).toContain('test #1');
   });
 });

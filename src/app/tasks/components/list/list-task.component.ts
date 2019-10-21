@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { Task } from '../../../shared';
 import { TaskService } from '../../services';
@@ -6,7 +6,8 @@ import { TaskService } from '../../services';
 @Component({
   selector: 'app-list-task',
   templateUrl: './list-task.component.html',
-  styleUrls: ['./list-task.component.scss']
+  styleUrls: ['./list-task.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListTaskComponent implements OnInit {
 
@@ -30,5 +31,12 @@ export class ListTaskComponent implements OnInit {
    */
   receiveTasksRef($event: any): void {
     this.tasks = $event;
+  }
+
+  /**
+   * Print in terminal a message after the list task component is mounted
+   */
+  checkTaskList(): void {
+    console.log('1 - check task list');
   }
 }
