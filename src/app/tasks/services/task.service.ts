@@ -16,7 +16,7 @@ export class TaskService {
    */
   listAll(): Task[] {
     const tasks = localStorage[this.keyTasks];
-    return tasks ? JSON.parse(tasks) : [];
+    return tasks ? JSON.parse(tasks).sort((t1, t2) => t1.deliveryDate > t2.deliveryDate ? 1 : -1) : [];
   }
 
   /**
