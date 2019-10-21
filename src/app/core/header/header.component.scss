@@ -5,6 +5,10 @@
         background: $mainColor;
         .brand-logo {
             font-size: 1.7rem;
+            display: flex;
+            i {
+                line-height: 56px;
+            }
         }
         .fa {
             font-size: 22px;
@@ -14,6 +18,29 @@
             margin-right: 20px;
             input {
                 color: #FFF;
+            }
+            input:not([type="submit"]) {
+                border-bottom-color: #FFF;;
+                &:focus {
+                    border-bottom-color: #FFF;
+                    box-shadow: 0 1px 0 0 #FFF;
+                }
+                &:disabled {
+                    color: #FFF;
+                    border-bottom: 1px solid #FFF;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .header {
+        nav {
+            .brand-logo {
+                i {
+                    line-height: 64px;
+                }
             }
         }
     }

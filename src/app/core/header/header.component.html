@@ -3,7 +3,7 @@
         <div class="nav-wrapper">
             <a class="brand-logo center" [routerLink]="['/']">
                 <i class="fa fa-tasks"></i>
-                {{ title }}
+                <div>{{ title }}</div>
             </a>
             <ul class="left">
                 <li>
@@ -12,7 +12,7 @@
                     </a>
                 </li>
             </ul>
-            <ul class="right">
+            <ul class="right" *ngIf="false">
                 <div class="search-field">
                     <li>
                         <a>
