@@ -9,5 +9,12 @@
         .fa {
             font-size: 22px;
         }
+        .search-field {
+            display: flex;
+            margin-right: 20px;
+            input {
+                color: #FFF;
+            }
+        }
     }
 }
