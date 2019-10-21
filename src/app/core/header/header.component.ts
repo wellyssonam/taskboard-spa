@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit {
 
   searchTask($event: any): void {
     $event.preventDefault();
-    console.log($event.target.value)
     this.searchText = $event.target.value;
   }
 

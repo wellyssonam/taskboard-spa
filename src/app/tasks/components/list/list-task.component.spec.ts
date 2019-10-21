@@ -55,9 +55,8 @@ describe('ListTaskComponent', () => {
 
     // adding tasks to the list
     service.register(tasks[0]);
-    service.register(tasks[1]);
     component.tasks = component.listAll();
-    expect(component.tasks.length).toEqual(2);
+    expect(component.tasks.length).toEqual(1);
     expect(component.tasks[0].name).toEqual('test #1');
   });
 });

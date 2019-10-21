@@ -16,7 +16,7 @@ export class TaskComponent implements OnInit {
   @Output() tasksRef = new EventEmitter<any>();
 
   dataTargetTask: string;
-  
+
   constructor(
     private taskService: TaskService
   ) { }
@@ -36,7 +36,7 @@ export class TaskComponent implements OnInit {
    */
   deleteTask($event: any, task: Task): void {
     $event.preventDefault();
-    if(confirm('Delete this task "' + task.name + '"?')) {
+    if (confirm('Delete this task "' + task.name + '"?')) {
       this.taskService.deleteTask(task.id);
       this.tasksRef.emit(this.taskService.listAll());
     }
