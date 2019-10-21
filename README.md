@@ -1,27 +1,65 @@
-# TaskboardSpa
+# Desafio | Frontend Developer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
+## Etapas de Instalação e Execução
 
-## Development server
+1 -  Primeiro certifique-se de que possui o node instalado para utilizar os comandos npm, para isso em seu terminal digite:
+> npm -v
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+2 - Se o node não estiver instalado acesse o site para download (**[node](https://nodejs.org/en/download/)**)
 
-## Code scaffolding
+3 - Após instalação das dependências o projeto poderá ser executado, para isso acesse o diretório "taskboard-spa" pelo terminal, verifique se encontra-se na branch "master" e então execute o comando para a instalação de todas as dependência presentes no projeto.
+> npm install
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+4 - No mesmo diretório digite o camando para executar o projeto.
+> ng serve
 
-## Build
+5 - Para realizar os testes autônomos.
+> ng test
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+5 - Para checar código em busca de possíveis erros seguindo o padrão da linguagem.
+> ng lint
 
-## Running unit tests
+---
+## Sobre o Projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Criar uma TODO list com as seguintes especificacoes:
 
-## Running end-to-end tests
+- Angular 8;
+- Usando router/lazy load;
+- Usando SASS;
+- Criar, listar, editar e remover;
+- Usar OnPush como changeDetectionStrategy;
+- Nao copiar o tutorial do angular (tour of heroes e semelhantes)
+- pronto para ser colocado em producao.
+- com testes;
+- entregar via github
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+---
+### Tecnologias Utilizadas
 
-## Further help
+- HTML5, SASS, JavaScript, 
+- Materialize
+- Angular 8
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+---
+### Melhorias Feitas
+
+- Páginas responsivas para diferentes tamanhos de tela.
+- Um contador de tarefas é exibido na parte superior da lista.
+- Ebibe uma barra de progresso da tarefa na página de criação ou edição da tarefa.
+- Exibe-se em cada card da tarefa a porcentagem do quanto a tarefa encontra-se concluída.
+- As tarefas estão listadas por ordem crescente da data de entrega.
+- A mesma interface utilizada para cadastrar a tarefa é utilizada também para edição.
+- As páginas não encontradas serão redirecionadas para a página inicial.
+
+---
+### Ajustes/Melhorias Futuras (Versão 2.0)
+
+- Criação do campo de busca de tarefas.
+- Criação de catergorias que irão definir o estado em que a tarefa se encontra, assim cada categoria terá sua lista de tarefas.
+- Exibir opções de temas para o site.
+
+---
+### Página Publicada
+
+Acessar página **[taskboard-spa](https://taskboard-spa.wellyssonam.now.sh/)**

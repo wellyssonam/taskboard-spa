@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 import { Task } from '../../../shared';
 import * as M from 'materialize-css';
@@ -7,7 +7,8 @@ import { TaskService } from './../../services';
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
-  styleUrls: ['./task.component.scss']
+  styleUrls: ['./task.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskComponent implements OnInit {
 
@@ -40,5 +41,12 @@ export class TaskComponent implements OnInit {
       this.taskService.deleteTask(task.id);
       this.tasksRef.emit(this.taskService.listAll());
     }
+  }
+
+  /**
+   * Print in terminal a message after the task component is mounted
+   */
+  checkTaskComponent(): void {
+    console.log('2 - check task component');
   }
 }
