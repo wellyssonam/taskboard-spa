@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Router } from '@angular/router';
 
 import { TaskRoutes } from './tasks';
+import { Error404Component } from './shared';
 
 
 const routes: Routes = [
@@ -17,4 +18,10 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  constructor(private router: Router) {
+    this.router.errorHandler = (error: any) => {
+        this.router.navigate(['/']); // or redirect to default route
+    }
+  }
+}
