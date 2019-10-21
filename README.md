@@ -53,6 +53,12 @@ Criar uma TODO list com as seguintes especificacoes:
 - As páginas não encontradas serão redirecionadas para a página inicial.
 
 ---
+### Não Foi Possível Fazer
+
+- As opções "Editar" e "Deletar" presente no dropdown de cada card de tarefa, somente não serão exibidas caso exista uma única tarefa,
+a partir da segunda apenas a última apresentará problema não exibindo assim as opções, os demais cards exibirão normalmente.
+
+---
 ### Ajustes/Melhorias Futuras (Versão 2.0)
 
 - Criação do campo de busca de tarefas.
