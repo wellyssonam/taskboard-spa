@@ -46,8 +46,14 @@ $fontColorHeader: $mainColor + bf;
 @media only screen and (min-width: 601px) {
     .row {
         .col{
+            &.right-m4 {
+                margin-right: 33.3333333333%;
+            }
             &.right-m7 {
                 margin-right: 58.3333333333%;
+            }
+            &.right-l6 {
+                margin-right: 50%;
             }
             &.right-l9 {
                 margin-right: 75%;

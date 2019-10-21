@@ -38,6 +38,8 @@ $progressBarRadius: 11px;
             padding: 0px 0px;
             font-size: 0.9em;
             text-align: center;
+            transition: width 1300ms;
+            transition-timing-function: ease-out;
         }
     }
 }
