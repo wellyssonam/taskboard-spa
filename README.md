@@ -13,10 +13,10 @@
 4 - No mesmo diretório digite o camando para executar o projeto.
 > ng serve
 
-5 - Para realizar os testes autônomos.
+5 - Para realizar os testes unitários.
 > ng test
 
-5 - Para checar código em busca de possíveis erros seguindo o padrão da linguagem.
+6 - Para checar código em busca de possíveis erros seguindo o padrão da linguagem.
 > ng lint
 
 ---
@@ -46,7 +46,7 @@ Criar uma TODO list com as seguintes especificacoes:
 
 - Páginas responsivas para diferentes tamanhos de tela.
 - Um contador de tarefas é exibido na parte superior da lista.
-- Ebibe uma barra de progresso da tarefa na página de criação ou edição da tarefa.
+- Exibe uma barra de progresso da tarefa na página de criação ou edição da tarefa.
 - Exibe-se em cada card da tarefa a porcentagem do quanto a tarefa encontra-se concluída.
 - As tarefas estão listadas por ordem crescente da data de entrega.
 - A mesma interface utilizada para cadastrar a tarefa é utilizada também para edição.
