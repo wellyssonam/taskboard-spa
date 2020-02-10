@@ -1,8 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Task } from '../../../shared';
-import * as M from 'materialize-css';
 import { TaskService } from './../../services';
+
 
 @Component({
   selector: 'app-task',
@@ -24,10 +23,10 @@ export class TaskComponent implements OnInit {
 
   ngOnInit() {
     this.dataTargetTask = 'dropdown-task-options' + this.keyTask;
-    const elems = document.querySelectorAll('.dropdown-trigger');
-    const instances = M.Dropdown.init(elems, {
-      coverTrigger: false
-    });
+    // const elems = document.querySelectorAll('.dropdown-trigger');
+    // const instances = M.Dropdown.init(elems, {
+    //   coverTrigger: false
+    // });
   }
 
   /**

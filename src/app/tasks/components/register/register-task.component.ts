@@ -1,10 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
-
-import M from 'materialize-css';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Task } from '../../../shared';
 import { TaskService } from './../../services';
+
 
 @Component({
   selector: 'app-register-task',
@@ -42,8 +41,8 @@ export class RegisterTaskComponent implements OnInit {
     }
 
     this.titleHeader = this.isEditing ? 'Edit Task' : 'Register Task';
-    const elems = document.querySelectorAll('.datepicker');
-    const instances = M.Datepicker.init(elems, {});
+    // const elems = document.querySelectorAll('.datepicker');
+    // const instances = M.Datepicker.init(elems, {});
   }
 
   /**
