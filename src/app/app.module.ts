@@ -1,11 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { BrowserModule } from '@angular/platform-browser';
+import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
-import { TasksModule } from './tasks';
 import { Error404Component } from './shared/components/error404';
+import { TasksModule } from './tasks';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { Error404Component } from './shared/components/error404';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TasksModule
+    TasksModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-
-import { Task } from '../../../shared';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+// import { Observable } from 'rxjs';
 import { TaskService } from '../../services';
+
 
 @Component({
   selector: 'app-list-task',
@@ -12,17 +12,17 @@ import { TaskService } from '../../services';
 export class ListTaskComponent implements OnInit {
 
   // showTaskOptions: boolean;
-  tasks: Task[];
+  // tasks$: Observable<any>;
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
-    this.tasks = this.listAll();
+    this.listAll();
   }
 
   /** return Lista all tasks */
-  listAll(): Task[] {
-    return this.taskService.listAll();
+  listAll() {
+    this.taskService.listAll();
   }
 
   /**
@@ -30,7 +30,7 @@ export class ListTaskComponent implements OnInit {
    * @param $event Event from delete task button involving other component
    */
   receiveTasksRef($event: any): void {
-    this.tasks = $event;
+    // this.tasks = $event;
   }
 
   /**
